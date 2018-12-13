@@ -13,6 +13,8 @@ class ServerlessPluginParcel {
     this.options = options;
 
     this.hooks = {
+      "before:offline:start:init": this.bundle.bind(this),
+      "before:offline:start:end": this.cleanup.bind(this),
       "before:package:createDeploymentArtifacts": this.bundle.bind(this),
       "after:package:createDeploymentArtifacts": this.cleanup.bind(this),
       "before:deploy:function:packageFunction": this.bundle.bind(this),
