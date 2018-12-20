@@ -1,16 +1,22 @@
 {
-  "name": "serverless-parcel",
-  "version": "1.0.4",
-  "main": "index.js",
+  "name": "serverless-simple-parcel",
+  "version": "1.0.0",
+  "main": "dist/index.js",
   "description": "A Serverless plugin to bundle your functions and assets with Parcel Bundler",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prebuild": "rimraf dist",
+    "lint": "tslint --project .",
+    "prepublishOnly": "yarn build"
+  },
   "author": {
-    "name": "John Agan",
-    "email": "johnagan@gmail.com"
+    "name": "Alexander Wong",
+    "email": "alex@udia.ca"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnagan/serverless-parcel.git"
+    "url": "git+https://github.com/awwong1/serverless-simple-parcel.git"
   },
   "keywords": [
     "serverless",
@@ -21,7 +27,20 @@
     "aws lambda"
   ],
   "dependencies": {
-    "fs-extra": "^7.0.1",
     "parcel-bundler": "^1.10.3"
-  }
+  },
+  "devDependencies": {
+    "@types/parcel-bundler": "^1.10.1",
+    "@types/serverless": "^1.18.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE.md"
+  ]
 }

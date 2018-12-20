@@ -9,3 +9,5 @@ node_modules
 
 # Logs files
 *.log
+
+dist
