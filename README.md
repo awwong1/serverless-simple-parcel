@@ -1,6 +1,7 @@
 # serverless-simple-parcel
 
 [![Travis](https://shields.alexander-wong.com/travis/awwong1/serverless-simple-parcel.svg?style=flat-square)](https://travis-ci.org/awwong1/serverless-simple-parcel)
+[![npm](https://shields.alexander-wong.com/npm/v/serverless-simple-parcel.svg?style=flat-square)](https://www.npmjs.com/package/serverless-simple-parcel)
 
 Serverless plugin for zero-config [parcel.js](https://parceljs.org/) bundling.
 

@@ -31,10 +31,10 @@ export default class ServerlessSimpleParcelPlugin {
     for (const entry of entries) {
       const entryOptions = { ...options, watch, cache: false, ...entry };
       this.serverless.cli.log(JSON.stringify(entryOptions));
-      await new Bundler(entry.file, entryOptions).bundle();
+      const { name } = await new Bundler(entry.file, entryOptions).bundle();
+      this.serverless.cli.log(`Bundled ${name}`);
     }
-
-    this.serverless.cli.log("Done bundling parcel entries!");
+    this.serverless.cli.log("Done bundling all parcel entries!");
   }
 }
 
