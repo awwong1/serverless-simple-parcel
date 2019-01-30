@@ -11,6 +11,7 @@ export default class ServerlessSimpleParcelPlugin {
       "before:offline:start:init": this.bundleWatch,
       "before:package:createDeploymentArtifacts": this.bundle,
       "before:deploy:function:packageFunction": this.bundle,
+      "before:invoke:local:invoke": this.bundle,
     };
   }
 

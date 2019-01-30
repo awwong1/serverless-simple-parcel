@@ -23,11 +23,23 @@ plugins:
 custom:
   parcel:
     options:
-      outDir: .build/src/dist # options for all parcel entries
+      outDir: dist # options for all parcel entries
     entries:
-      - file: src/dist/index.html # entry specific options override global options
+      - file: src/public/index.html
+        outDir: dist/src/public # entry specific options override global options
         minify: true
         target: browser
+      - file: src/ssr.ts
+        target: node
+        outFile: handler.js
+```
+
+Supported serverless commands include:
+
+```bash
+$ serverless offline start # serverless-offline (watch)
+$ serverless deploy
+$ serverless invoke local 
 ```
 
 A full list of options can be found on [parcel's api docs](https://parceljs.org/api.html)
